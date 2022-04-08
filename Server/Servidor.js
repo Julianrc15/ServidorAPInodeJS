@@ -5,6 +5,9 @@
 //const express = require('express')
 import express from 'express'
 
+//importar rutas 
+import {routes} from '../routes/rutas.js'
+
 
 
 //programando la clase del servidor del servidor
@@ -32,9 +35,7 @@ export class Servidor{
 
     enrutarPeticiones(){
 
-            this.app.get('/API/v1/viernes', function (req, res) {
-            res.send('Hello World')
-          })
+            this.app.use('/',routes)
 
     }
 
